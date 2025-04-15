@@ -4,13 +4,7 @@ const cors = require("cors");
 const app = express();
 const routes = require("./routes");
 
-app.use(
-  cors({
-    origin: ["https://front-4-life.vercel.app/"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 app.use("/api", routes);
